@@ -1,0 +1,59 @@
+unit Unit3;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, StdCtrls;
+
+type
+  TForm3 = class(TForm)
+    PopupMenu1: TPopupMenu;
+    N1: TMenuItem;
+    CheckBox1: TCheckBox;
+    procedure FormCreate(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure N1Click(Sender: TObject);
+    procedure FormDblClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+uses Unit1;
+
+{$R *.dfm}
+
+procedure TForm3.FormCreate(Sender: TObject);
+begin
+form3.color:=clblack;
+end;
+
+procedure TForm3.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+if checkbox1.Checked=true then begin
+if key=113 then form3.Top:=top+20;
+if key=114 then form3.Align:=altop;
+if (key=114) and (ssAlt in Shift) then form3.popupmenu:=popupmenu1;
+end;
+end;
+
+procedure TForm3.N1Click(Sender: TObject);
+begin
+form3.Caption:=inputbox('¬ведите строку заголловка','---------+----->',' ');
+end;
+
+procedure TForm3.FormDblClick(Sender: TObject);
+begin
+form1.close;
+end;
+
+end.
