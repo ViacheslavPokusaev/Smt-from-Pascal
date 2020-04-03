@@ -1,0 +1,80 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    mm1: TMainMenu;
+    N1: TMenuItem;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure N1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2; n:string;n2:string;
+  g:string;q:boolean;
+  g1,g4:string;
+  f:TStringList;
+  g5,g2,g3,i,j:Integer;
+
+implementation
+
+uses Unit1;
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+form1.visible:=True;
+Form2.Visible:=False;
+f:=TStringList.Create;
+f.LoadFromFile('C:\Student\test.ini.txt');
+if (g='777') and (q=true) then begin
+f[0]:=g1;
+f[1]:=IntToStr(g2);
+f[2]:=IntToStr(g3);
+end;
+g2:=strtoint(f[1]);
+g3:=StrToInt(f[2]);
+i:=g3;
+form1.Timer1.Enabled:=true;
+form1.Timer2.Enabled:=true;
+form1.Timer1.Interval:=g3*1000;
+form1.Timer2.Interval:=1000;
+f.SaveToFile('C:\Student\test.ini.txt');
+ f.Free;
+end;
+
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+Form2.Visible:=True;
+q:=false;
+end;
+
+procedure TForm2.N1Click(Sender: TObject);
+begin
+g:=inputbox('¬ведите пароль',' ',' ');
+if g='777' then begin
+g1:=inputbox('¬ведите название теста',' ',' ');
+Form1.Caption:=g1;
+g2:=StrToInt(inputbox('¬ведите количество вопросов',' ',' '));
+if g2>7 then ShowMessage('„исло превышает количество вопросов');
+g3:=StrToInt(inputbox('¬ведите на 1 вопрос (с)',' ',' '));
+q:=true;
+end
+else  ShowMessage('ѕароль неверный');
+
+end;
+
+end.
