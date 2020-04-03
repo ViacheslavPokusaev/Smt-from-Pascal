@@ -1,0 +1,53 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Memo1: TMemo;
+    Edit1: TEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+a:array [1..6,1..6] of Integer;
+i,j,k,f:Integer;
+begin
+Randomize;
+f:=0;
+k:=-1;
+for i:=1 to 6 do begin
+for j:=1 to 6 do begin
+a[i,j]:=strtoint(inputbox(' ',' ',' '));
+Memo1.Lines.Add(IntToStr(a[i,j]));
+end;
+end;
+for i:=1 to 6 do begin
+for j:=1 to 6 do begin
+if (a[i,j]>a[i+1,j]) and (a[i+1,j]>a[i+2,j]) and (a[i+2,j]>a[i+3,j]) and (a[i+3,j]>a[i+4,j]) and (a[i+4,j]>a[i+5,j]) and (i<>6) then begin k:=k+1; f:=2;
+end;
+end;
+end;
+edit1.Text:=IntToStr(k);
+end;
+end.
+

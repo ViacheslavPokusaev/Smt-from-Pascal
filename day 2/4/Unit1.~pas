@@ -1,0 +1,60 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Memo1: TMemo;
+    Memo2: TMemo;
+    Edit1: TEdit;
+    Button1: TButton;
+    Edit2: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+A:array [1..10] of integer;
+B:array [1..10] of integer;
+i,k,S,c:integer;
+begin
+randomize;
+s:=0;
+ k:=strtoint(edit1.Text);
+for i:=1 to 10 do begin
+a[i]:=random(10)-2;
+memo1.lines.add(inttostr(a[i]));
+end;
+
+for i:=k to 10 do begin
+ s:=s+a[k];
+ end;
+edit2.Text:=inttostr(s);
+
+for i:=1 to 10 do begin
+if i=k then b[i]:=s else b[i]:=a[i];
+
+memo2.lines.add(inttostr(b[i]));
+end;
+end;
+
+end.
