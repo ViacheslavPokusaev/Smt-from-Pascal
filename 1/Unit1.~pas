@@ -4,13 +4,15 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Math;
+  Dialogs, Math, StdCtrls;
 
 type
   TForm1 = class(TForm)
     Memo1: TMemo;
     Button1: TButton;
+    Edit1: TEdit;
     Label1: TLabel;
+    Label2: TLabel;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -27,10 +29,10 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 var
-x:integer;
+x,k:integer;
 y:real;
-
 begin
+k:=0;
 X:=-100;
 repeat
 case x of
@@ -39,6 +41,8 @@ case x of
 1:y:=4/(sqr(x)-8)
 else y:=sqrt(abs(x+9))
 end;
+if y>0 then k:=k+1;
+edit1.text:=inttostr(k);
 memo1.lines.add(floattostr(y));
 x:=x+1;
 until x>0;

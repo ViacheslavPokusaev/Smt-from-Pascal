@@ -10,7 +10,9 @@ type
   TForm1 = class(TForm)
     Memo1: TMemo;
     Button1: TButton;
+    Memo2: TMemo;
     Label1: TLabel;
+    Label2: TLabel;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -27,22 +29,16 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 var
-x:integer;
-y:real;
-
+a:integer;
+f:real;
 begin
-X:=-100;
-repeat
-case x of
--13,13,24:y:=abs(x);
-8,29,43:y:=-intpower(x+1,3);
-1:y:=4/(sqr(x)-8)
-else y:=sqrt(abs(x+9))
-end;
-memo1.lines.add(floattostr(y));
-x:=x+1;
-until x>0;
-
+a:=-100;
+repeat;
+if a<-8 then f:=abs(sqr(a)-7*intpower(a,5)) else f:=6+cos(4*a);
+memo1.Lines.Add(floattostr(f));
+if frac(f/2)=0 then memo2.Lines.Add(floattostr(f));
+a:=a+10;
+until a>300;
 end;
 
 end.

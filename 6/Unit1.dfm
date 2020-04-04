@@ -1,0 +1,94 @@
+object Form1: TForm1
+  Left = 295
+  Top = 395
+  Width = 1305
+  Height = 675
+  Caption = 'Form1'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 112
+    Top = 96
+    Width = 153
+    Height = 24
+    Caption = #1042#1074#1077#1076#1110#1090#1100' '#1095#1080#1089#1083#1086
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 360
+    Top = 96
+    Width = 61
+    Height = 24
+    Caption = #1057#1091#1084#1072
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 536
+    Top = 96
+    Width = 94
+    Height = 24
+    Caption = #1044#1086#1073#1091#1090#1086#1082
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Edit2: TEdit
+    Left = 328
+    Top = 136
+    Width = 121
+    Height = 21
+    TabOrder = 0
+    Text = 'Edit2'
+  end
+  object Edit3: TEdit
+    Left = 520
+    Top = 136
+    Width = 121
+    Height = 21
+    TabOrder = 1
+    Text = 'Edit3'
+  end
+  object Button1: TButton
+    Left = 280
+    Top = 208
+    Width = 209
+    Height = 25
+    Caption = #1054#1073#1095#1080#1089#1083#1080#1090#1080
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+  object Edit1: TEdit
+    Left = 128
+    Top = 136
+    Width = 121
+    Height = 21
+    TabOrder = 3
+    Text = 'Edit1'
+  end
+end

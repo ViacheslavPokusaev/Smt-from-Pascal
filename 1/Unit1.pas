@@ -4,14 +4,15 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,math;
+  Dialogs, Math, StdCtrls;
 
 type
   TForm1 = class(TForm)
     Memo1: TMemo;
-    Label1: TLabel;
-    Edit1: TEdit;
     Button1: TButton;
+    Edit1: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -21,30 +22,31 @@ type
 
 var
   Form1: TForm1;
-  c:array [1..10] of integer;
-
 
 implementation
 
 {$R *.dfm}
- procedure Max(n,m:real;var max:real);
-  begin
-  max:=0;
-  if n>m then max:=n else max:=m end;
-
 
 procedure TForm1.Button1Click(Sender: TObject);
 var
-max1,max2,max3:real;
-i:integer;
+x,k:integer;
+y:real;
 begin
-for i:=1 to 10 do
-c[i]:=strtoint (memo1.Lines[i-1]);
-max(3*c[2], intpower(c[5],3),max1);
-max(c[1] , (c[6]+c[8]),max2)  ;
-max(c[6]/c[1],c[4],max3) ;
-Edit1.text:=floattostr((max1+5*max2)/max3);
+k:=0;
+X:=-100;
+repeat
+case x of
+-13,13,24:y:=abs(x);
+8,29,43:y:=-intpower(x+1,3);
+1:y:=4/(sqr(x)-8)
+else y:=sqrt(abs(x+9))
+end;
+if y>0 then k:=k+1;
 
+memo1.lines.add(floattostr(y));
+x:=x+1;
+until x>0;
+edit1.text:=inttostr(k);
 end;
 
 end.
